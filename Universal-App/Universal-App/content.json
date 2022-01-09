@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Radio",
+        "icon": "",
+        "viewType": "player"
+    },
+    {
+        "title": "Social Media",
+        "icon": "",
+        "viewType": "webview"
+    },
+    {
+        "title": "Website",
+        "icon": "",
+        "viewType": "webview"
+    }
+]
