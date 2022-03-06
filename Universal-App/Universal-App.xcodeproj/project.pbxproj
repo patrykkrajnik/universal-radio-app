@@ -19,7 +19,7 @@
 		E5E52A52278B22F800E0516B /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = E5E52A51278B22F800E0516B /* content.json */; };
 		E5E52A54278B47A000E0516B /* ItemsContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52A53278B47A000E0516B /* ItemsContentModel.swift */; };
 		E5E52A56278B482E00E0516B /* RadioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52A55278B482E00E0516B /* RadioPlayerViewController.swift */; };
-		E5E52A58278B484800E0516B /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52A57278B484800E0516B /* WebviewViewController.swift */; };
+		E5E52A58278B484800E0516B /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E52A57278B484800E0516B /* WebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		E5E52A51278B22F800E0516B /* content.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		E5E52A53278B47A000E0516B /* ItemsContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContentModel.swift; sourceTree = "<group>"; };
 		E5E52A55278B482E00E0516B /* RadioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewController.swift; sourceTree = "<group>"; };
-		E5E52A57278B484800E0516B /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		E5E52A57278B484800E0516B /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5D9FF4D27D52F6400FADD90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5D9FF4E27D52F7400FADD90 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9FF5227D5305000FADD90 /* WebView */,
+				E5D9FF5127D5304800FADD90 /* RadioPlayer */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5D9FF4F27D52F8F00FADD90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5E52A51278B22F800E0516B /* content.json */,
+				E5E02562278A2C9D000680F9 /* Assets.xcassets */,
+				E5E02567278A2C9D000680F9 /* Info.plist */,
+				E5E02564278A2C9D000680F9 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5D9FF5027D52F9A00FADD90 /* AppFactory */ = {
+			isa = PBXGroup;
+			children = (
+				E5E02559278A2C9C000680F9 /* AppDelegate.swift */,
+				E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */,
+				E5E52A4D278B1DB400E0516B /* ContentFactory.swift */,
+				E5E52A4F278B1ED400E0516B /* TabBarManager.swift */,
+			);
+			path = AppFactory;
+			sourceTree = "<group>";
+		};
+		E5D9FF5127D5304800FADD90 /* RadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E5E52A55278B482E00E0516B /* RadioPlayerViewController.swift */,
+			);
+			path = RadioPlayer;
+			sourceTree = "<group>";
+		};
+		E5D9FF5227D5305000FADD90 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E5E52A57278B484800E0516B /* WebViewViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		E5D9FF5327D530BC00FADD90 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9FF4D27D52F6400FADD90 /* Extensions */,
+				E5D9FF5427D530C500FADD90 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E5D9FF5427D530C500FADD90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5E52A53278B47A000E0516B /* ItemsContentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E5E0254D278A2C9C000680F9 = {
 			isa = PBXGroup;
 			children = (
@@ -70,18 +142,10 @@
 		E5E02558278A2C9C000680F9 /* Universal-App */ = {
 			isa = PBXGroup;
 			children = (
-				E5E02559278A2C9C000680F9 /* AppDelegate.swift */,
-				E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */,
-				E5E02562278A2C9D000680F9 /* Assets.xcassets */,
-				E5E02564278A2C9D000680F9 /* LaunchScreen.storyboard */,
-				E5E02567278A2C9D000680F9 /* Info.plist */,
-				E5E52A4D278B1DB400E0516B /* ContentFactory.swift */,
-				E5E52A4F278B1ED400E0516B /* TabBarManager.swift */,
-				E5E52A51278B22F800E0516B /* content.json */,
-				E5E52A53278B47A000E0516B /* ItemsContentModel.swift */,
-				E5E52A55278B482E00E0516B /* RadioPlayerViewController.swift */,
-				E5E52A57278B484800E0516B /* WebviewViewController.swift */,
-				E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */,
+				E5D9FF5027D52F9A00FADD90 /* AppFactory */,
+				E5D9FF4E27D52F7400FADD90 /* ViewControllers */,
+				E5D9FF5327D530BC00FADD90 /* Common */,
+				E5D9FF4F27D52F8F00FADD90 /* Resources */,
 			);
 			path = "Universal-App";
 			sourceTree = "<group>";
@@ -170,7 +234,7 @@
 				E5E52A50278B1ED400E0516B /* TabBarManager.swift in Sources */,
 				E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */,
 				E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */,
-				E5E52A58278B484800E0516B /* WebviewViewController.swift in Sources */,
+				E5E52A58278B484800E0516B /* WebViewViewController.swift in Sources */,
 				E5E52A54278B47A000E0516B /* ItemsContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Universal-App/Info.plist";
+				INFOPLIST_FILE = "Universal-App/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -340,7 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Universal-App/Info.plist";
+				INFOPLIST_FILE = "Universal-App/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

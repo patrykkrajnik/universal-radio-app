@@ -39,7 +39,7 @@ final internal class ContentFactory {
         case .player:
             viewController = RadioPlayerViewController()
         case .webview:
-            viewController = WebviewViewController()
+            viewController = WebViewViewController()
         }
 
         viewController.tabBarItem.title = itemContent.title
