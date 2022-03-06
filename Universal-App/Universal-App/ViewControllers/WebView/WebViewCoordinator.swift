@@ -6,11 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
 final internal class WebViewCoordinator: BaseCoordinator {
 
-    func start() {
+    private let navigationController: UINavigationController
 
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+
+    func start() {
+        let webViewViewModel = WebViewViewModel()
+        let webViewViewController = WebViewViewController(viewModel: webViewViewModel)
+
+        navigationController.pushViewController(webViewViewController, animated: true)
     }
 
 }

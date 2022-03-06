@@ -18,9 +18,12 @@ final internal class AppCoordinator: BaseCoordinator {
         let navigationController = UINavigationController()
 
         switch itemContent.viewType {
-        default:
+        case .player:
             let radioPlayerCoordinator = RadioPlayerCoordinator(navigationController: navigationController)
             coordinate(to: radioPlayerCoordinator)
+        case .webview:
+            let webViewCoordinator = WebViewCoordinator(navigationController: navigationController)
+            coordinate(to: webViewCoordinator)
         }
 
         navigationController.tabBarItem.title = itemContent.title
