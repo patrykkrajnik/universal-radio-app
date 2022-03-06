@@ -12,6 +12,8 @@
 		E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4B27D52DD600FADD90 /* RxSwift */; };
 		E5D9FF5627D534D100FADD90 /* RadioPlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */; };
 		E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */; };
+		E5D9FF5B27D535B600FADD90 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */; };
+		E5D9FF5D27D5396000FADD90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5C27D5396000FADD90 /* AppCoordinator.swift */; };
 		E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E02559278A2C9C000680F9 /* AppDelegate.swift */; };
 		E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */; };
 		E5E02563278A2C9D000680F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E02562278A2C9D000680F9 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerCoordinator.swift; sourceTree = "<group>"; };
 		E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
+		E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		E5D9FF5C27D5396000FADD90 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E5E02556278A2C9C000680F9 /* Universal-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universal-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E02559278A2C9C000680F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			children = (
 				E5E02559278A2C9C000680F9 /* AppDelegate.swift */,
 				E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */,
+				E5D9FF5C27D5396000FADD90 /* AppCoordinator.swift */,
 				E5E52A4D278B1DB400E0516B /* ContentFactory.swift */,
 				E5E52A4F278B1ED400E0516B /* TabBarManager.swift */,
 			);
@@ -115,6 +120,7 @@
 		E5D9FF5327D530BC00FADD90 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9FF5927D535A600FADD90 /* Coordinator */,
 				E5D9FF4D27D52F6400FADD90 /* Extensions */,
 				E5D9FF5427D530C500FADD90 /* Models */,
 			);
@@ -127,6 +133,14 @@
 				E5E52A53278B47A000E0516B /* ItemsContentModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E5D9FF5927D535A600FADD90 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		E5E0254D278A2C9C000680F9 = {
@@ -234,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D9FF5D27D5396000FADD90 /* AppCoordinator.swift in Sources */,
 				E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */,
 				E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */,
 				E5E52A4E278B1DB400E0516B /* ContentFactory.swift in Sources */,
@@ -243,6 +258,7 @@
 				E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */,
 				E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */,
 				E5E52A58278B484800E0516B /* WebViewViewController.swift in Sources */,
+				E5D9FF5B27D535B600FADD90 /* BaseCoordinator.swift in Sources */,
 				E5E52A54278B47A000E0516B /* ItemsContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

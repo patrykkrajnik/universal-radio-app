@@ -16,6 +16,7 @@ internal enum ViewType: String, Decodable {
 final internal class ContentFactory {
 
     private var itemsContent: [ItemsContentModel]?
+    private let appCoordinator = AppCoordinator()
 
     init() {
         self.itemsContent = self.getApplicationContent()
@@ -26,25 +27,10 @@ final internal class ContentFactory {
         guard let itemsContent = itemsContent else { return viewControllers }
 
         for itemContent in itemsContent {
-            viewControllers.append(createViewController(withContent: itemContent))
+            viewControllers.append(appCoordinator.startViewControllers(withContent: itemContent))
         }
 
         return viewControllers
-    }
-
-    private func createViewController(withContent itemContent: ItemsContentModel) -> UIViewController {
-        let viewController: UIViewController
-
-        switch itemContent.viewType {
-        case .player:
-            viewController = RadioPlayerViewController()
-        case .webview:
-            viewController = WebViewViewController()
-        }
-
-        viewController.tabBarItem.title = itemContent.title
-
-        return viewController
     }
 
     private func getApplicationContent() -> [ItemsContentModel]? {

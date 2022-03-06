@@ -10,6 +10,8 @@ import UIKit
 
 final internal class RadioPlayerViewController: UIViewController {
 
+    private let viewModel: RadioPlayerViewModel
+
     private let stackView = UIStackView(
         axis: .vertical,
         spacing: .basic,
@@ -23,6 +25,15 @@ final internal class RadioPlayerViewController: UIViewController {
     private let buttonImageView = UIImageView()
 
     private let playPauseButton = UIButton()
+
+    init(viewModel: RadioPlayerViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +102,7 @@ private extension RadioPlayerViewController {
         let buttonImageViewSize: CGFloat = availableWidth / 3.5
 
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: spacing),
+            stackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: spacing / 2),
             stackView.widthAnchor.constraint(equalToConstant: availableWidth),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
