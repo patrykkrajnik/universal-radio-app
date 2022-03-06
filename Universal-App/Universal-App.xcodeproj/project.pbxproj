@@ -10,6 +10,8 @@
 		E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */; };
 		E5D9FF4A27D52DD600FADD90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4927D52DD600FADD90 /* RxCocoa */; };
 		E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4B27D52DD600FADD90 /* RxSwift */; };
+		E5D9FF5627D534D100FADD90 /* RadioPlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */; };
+		E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */; };
 		E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E02559278A2C9C000680F9 /* AppDelegate.swift */; };
 		E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */; };
 		E5E02563278A2C9D000680F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E02562278A2C9D000680F9 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerCoordinator.swift; sourceTree = "<group>"; };
+		E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
 		E5E02556278A2C9C000680F9 /* Universal-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universal-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E02559278A2C9C000680F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				E5E52A55278B482E00E0516B /* RadioPlayerViewController.swift */,
+				E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */,
+				E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */,
 			);
 			path = RadioPlayer;
 			sourceTree = "<group>";
@@ -229,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */,
+				E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */,
 				E5E52A4E278B1DB400E0516B /* ContentFactory.swift in Sources */,
 				E5E52A56278B482E00E0516B /* RadioPlayerViewController.swift in Sources */,
+				E5D9FF5627D534D100FADD90 /* RadioPlayerCoordinator.swift in Sources */,
 				E5E52A50278B1ED400E0516B /* TabBarManager.swift in Sources */,
 				E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */,
 				E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */,
