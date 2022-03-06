@@ -14,6 +14,9 @@
 		E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */; };
 		E5D9FF5B27D535B600FADD90 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */; };
 		E5D9FF5D27D5396000FADD90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5C27D5396000FADD90 /* AppCoordinator.swift */; };
+		E5D9FF6C27D5442800FADD90 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF6B27D5442800FADD90 /* WebViewViewController.swift */; };
+		E5D9FF6E27D5443500FADD90 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF6D27D5443500FADD90 /* WebViewViewModel.swift */; };
+		E5D9FF7027D5444100FADD90 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF6F27D5444100FADD90 /* WebViewCoordinator.swift */; };
 		E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E02559278A2C9C000680F9 /* AppDelegate.swift */; };
 		E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */; };
 		E5E02563278A2C9D000680F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E02562278A2C9D000680F9 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
 		E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E5D9FF5C27D5396000FADD90 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E5D9FF6B27D5442800FADD90 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		E5D9FF6D27D5443500FADD90 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
+		E5D9FF6F27D5444100FADD90 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
 		E5E02556278A2C9C000680F9 /* Universal-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universal-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E02559278A2C9C000680F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0255B278A2C9C000680F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		E5D9FF4E27D52F7400FADD90 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9FF6A27D5441700FADD90 /* WebView */,
 				E5D9FF5127D5304800FADD90 /* RadioPlayer */,
 			);
 			path = ViewControllers;
@@ -130,6 +137,16 @@
 				E5D9FF5A27D535B600FADD90 /* BaseCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E5D9FF6A27D5441700FADD90 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9FF6B27D5442800FADD90 /* WebViewViewController.swift */,
+				E5D9FF6D27D5443500FADD90 /* WebViewViewModel.swift */,
+				E5D9FF6F27D5444100FADD90 /* WebViewCoordinator.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		E5E0254D278A2C9C000680F9 = {
@@ -245,8 +262,11 @@
 				E5D9FF5627D534D100FADD90 /* RadioPlayerCoordinator.swift in Sources */,
 				E5E52A50278B1ED400E0516B /* TabBarManager.swift in Sources */,
 				E5E0255C278A2C9C000680F9 /* SceneDelegate.swift in Sources */,
+				E5D9FF7027D5444100FADD90 /* WebViewCoordinator.swift in Sources */,
+				E5D9FF6E27D5443500FADD90 /* WebViewViewModel.swift in Sources */,
 				E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */,
 				E5D9FF5B27D535B600FADD90 /* BaseCoordinator.swift in Sources */,
+				E5D9FF6C27D5442800FADD90 /* WebViewViewController.swift in Sources */,
 				E5E52A54278B47A000E0516B /* ItemsContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
