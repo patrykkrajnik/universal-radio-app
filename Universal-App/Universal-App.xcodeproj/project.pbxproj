@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */; };
+		E53D280227E371DA002F5C23 /* FRadioPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = E53D280127E371DA002F5C23 /* FRadioPlayer */; };
 		E5D9FF4A27D52DD600FADD90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4927D52DD600FADD90 /* RxCocoa */; };
 		E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4B27D52DD600FADD90 /* RxSwift */; };
 		E5D9FF5627D534D100FADD90 /* RadioPlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */; };
@@ -57,6 +58,7 @@
 			files = (
 				E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */,
 				E5D9FF4A27D52DD600FADD90 /* RxCocoa in Frameworks */,
+				E53D280227E371DA002F5C23 /* FRadioPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +197,7 @@
 			packageProductDependencies = (
 				E5D9FF4927D52DD600FADD90 /* RxCocoa */,
 				E5D9FF4B27D52DD600FADD90 /* RxSwift */,
+				E53D280127E371DA002F5C23 /* FRadioPlayer */,
 			);
 			productName = "Universal-App";
 			productReference = E5E02556278A2C9C000680F9 /* Universal-App.app */;
@@ -226,6 +229,7 @@
 			mainGroup = E5E0254D278A2C9C000680F9;
 			packageReferences = (
 				E5D9FF4827D52DD600FADD90 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E53D280027E371DA002F5C23 /* XCRemoteSwiftPackageReference "FRadioPlayer" */,
 			);
 			productRefGroup = E5E02557278A2C9C000680F9 /* Products */;
 			projectDirPath = "";
@@ -479,6 +483,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E53D280027E371DA002F5C23 /* XCRemoteSwiftPackageReference "FRadioPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fethica/FRadioPlayer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
 		E5D9FF4827D52DD600FADD90 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -490,6 +502,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E53D280127E371DA002F5C23 /* FRadioPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E53D280027E371DA002F5C23 /* XCRemoteSwiftPackageReference "FRadioPlayer" */;
+			productName = FRadioPlayer;
+		};
 		E5D9FF4927D52DD600FADD90 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E5D9FF4827D52DD600FADD90 /* XCRemoteSwiftPackageReference "RxSwift" */;
