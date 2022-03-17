@@ -42,7 +42,7 @@ final internal class RadioPlayerViewController: UIViewController {
     }
 
     private func bindViewModel() {
-
+        navigationItem.title = viewModel.data.title
     }
 
 }

@@ -11,13 +11,18 @@ import UIKit
 final internal class WebViewCoordinator: BaseCoordinator {
 
     private let navigationController: UINavigationController
+    private let data: ItemContentModel
 
-    init(navigationController: UINavigationController) {
+    init(
+        initialData data: ItemContentModel,
+        navigationController: UINavigationController
+    ) {
         self.navigationController = navigationController
+        self.data = data
     }
 
     func start() {
-        let webViewViewModel = WebViewViewModel()
+        let webViewViewModel = WebViewViewModel(withInitialData: data)
         let webViewViewController = WebViewViewController(viewModel: webViewViewModel)
 
         navigationController.pushViewController(webViewViewController, animated: true)

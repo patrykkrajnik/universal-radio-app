@@ -15,30 +15,30 @@ internal enum ViewType: String, Decodable {
 
 final internal class ContentFactory {
 
-    private var itemsContent: [ItemsContentModel]?
+    private var tabBarItemsContent: [TabBarItemContentModel]?
     private let appCoordinator = AppCoordinator()
 
     init() {
-        self.itemsContent = self.getApplicationContent()
+        self.tabBarItemsContent = self.getApplicationContent()
     }
 
     internal func getTabBarItems() -> [UIViewController] {
         var viewControllers: [UIViewController] = []
-        guard let itemsContent = itemsContent else { return viewControllers }
+        guard let tabBarItemsContent = tabBarItemsContent else { return viewControllers }
 
-        for itemContent in itemsContent {
-            viewControllers.append(appCoordinator.startViewControllers(withContent: itemContent))
+        for tabBarItemContent in tabBarItemsContent {
+            viewControllers.append(appCoordinator.startViewController(withContent: tabBarItemContent))
         }
 
         return viewControllers
     }
 
-    private func getApplicationContent() -> [ItemsContentModel]? {
+    private func getApplicationContent() -> [TabBarItemContentModel]? {
         guard let path = Bundle.main.path(forResource: "content", ofType: "json") else { return nil }
 
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let dataContent = try JSONDecoder().decode([ItemsContentModel].self, from: data)
+            let dataContent = try JSONDecoder().decode([TabBarItemContentModel].self, from: data)
             return dataContent
         } catch {
             print("Parsing JSON file failed")

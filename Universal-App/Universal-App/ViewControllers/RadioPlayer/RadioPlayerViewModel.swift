@@ -8,5 +8,10 @@
 import Foundation
 
 final internal class RadioPlayerViewModel {
-    
+
+    internal let data: ItemContentModel
+
+    init(withInitialData data: ItemContentModel) {
+        self.data = data
+    }
 }

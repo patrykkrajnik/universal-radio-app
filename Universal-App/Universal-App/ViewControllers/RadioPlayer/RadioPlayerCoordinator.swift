@@ -11,13 +11,18 @@ import UIKit
 final internal class RadioPlayerCoordinator: BaseCoordinator {
 
     private let navigationController: UINavigationController
+    private let data: ItemContentModel
 
-    init(navigationController: UINavigationController) {
+    init(
+        initialData data: ItemContentModel,
+        navigationController: UINavigationController
+    ) {
         self.navigationController = navigationController
+        self.data = data
     }
 
     func start() {
-        let radioPlayerViewModel = RadioPlayerViewModel()
+        let radioPlayerViewModel = RadioPlayerViewModel(withInitialData: data)
         let radioPlayerViewController = RadioPlayerViewController(viewModel: radioPlayerViewModel)
 
         navigationController.pushViewController(radioPlayerViewController, animated: true)

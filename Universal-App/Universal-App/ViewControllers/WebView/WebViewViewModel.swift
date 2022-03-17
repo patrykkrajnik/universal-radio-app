@@ -8,5 +8,11 @@
 import Foundation
 
 final internal class WebViewViewModel {
+
+    internal let data: ItemContentModel
+
+    init(withInitialData data: ItemContentModel) {
+        self.data = data
+    }
     
 }
