@@ -2,16 +2,38 @@
     {
         "title": "Radio",
         "icon": "",
-        "viewType": "player"
+        "viewType": "player",
+        "subItems": [
+            {
+                "title": "Radio Name",
+                "icon": "",
+                "url": ""
+            }
+        ]
     },
     {
         "title": "Social Media",
         "icon": "",
-        "viewType": "webview"
+        "viewType": "webview",
+        "subItems": [
+            {
+                "title": "Website Name",
+                "icon": "",
+                "url": ""
+
+            }
+        ]
     },
     {
         "title": "Website",
         "icon": "",
-        "viewType": "webview"
+        "viewType": "webview",
+        "subItems": [
+            {
+                "title": "Website Name",
+                "icon": "",
+                "url": ""
+            }
+        ]
     }
 ]
