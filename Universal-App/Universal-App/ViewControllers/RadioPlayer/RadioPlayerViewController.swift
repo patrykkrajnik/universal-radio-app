@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import SDWebImage
 
 final internal class RadioPlayerViewController: UIViewController {
 
@@ -18,13 +20,16 @@ final internal class RadioPlayerViewController: UIViewController {
         alignment: .center
     )
 
-    private let songTitle = UILabel()
-    private let artistTitle = UILabel()
+    private let activityIndicator = UIActivityIndicatorView()
+
+    private let songTitleLabel = UILabel()
+    private let artistTitleLabel = UILabel()
 
     private let artworkImageView = UIImageView()
     private let buttonImageView = UIImageView()
-
     private let playPauseButton = UIButton()
+
+    private let disposeBag = DisposeBag()
 
     init(viewModel: RadioPlayerViewModel) {
         self.viewModel = viewModel
@@ -43,6 +48,44 @@ final internal class RadioPlayerViewController: UIViewController {
 
     private func bindViewModel() {
         navigationItem.title = viewModel.data.title
+
+        playPauseButton.rx.tap
+            .bind(to: viewModel.playPauseDidTap)
+            .disposed(by: disposeBag)
+
+        viewModel.artistTitle
+            .drive(with: self, onNext: { owner, artistTitle in
+                owner.artistTitleLabel.text = artistTitle.handleIfEmpty()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.songTitle
+            .drive(with: self, onNext: { owner, songTitle in
+                owner.songTitleLabel.text = songTitle.handleIfEmpty()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.artworkImageUrl
+            .drive(with: self, onNext: { owner, artworkUrl in
+                guard let artworkUrl = artworkUrl else {
+                    owner.artworkImageView.image = nil
+                    return
+                }
+                owner.artworkImageView.sd_setImage(with: artworkUrl, completed: nil)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.playerIsPlaying
+            .drive(with: self, onNext: { owner, isPlaying in
+                owner.buttonImageView.backgroundColor = isPlaying ? .red : .blue
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.isLoading
+            .drive(with: self, onNext: { owner, isLoading in
+                isLoading ? owner.activityIndicator.startAnimating() : owner.activityIndicator.stopAnimating()
+            })
+            .disposed(by: disposeBag)
     }
 
 }
@@ -65,12 +108,14 @@ private extension RadioPlayerViewController {
 
     func setupSubviews() {
         view.addSubview(stackView)
+        artworkImageView.addSubview(activityIndicator)
+        playPauseButton.addSubview(buttonImageView)
 
         stackView.addArrangedSubviews([
             artworkImageView,
-            songTitle,
-            artistTitle,
-            buttonImageView
+            songTitleLabel,
+            artistTitleLabel,
+            playPauseButton
         ])
     }
 
@@ -81,19 +126,17 @@ private extension RadioPlayerViewController {
 
         view.backgroundColor = .systemBackground
 
-        songTitle.font = UIFont.systemFont(ofSize: songTitleFontSize, weight: .bold)
-        songTitle.textAlignment = .center
+        songTitleLabel.font = UIFont.systemFont(ofSize: songTitleFontSize, weight: .bold)
+        songTitleLabel.textAlignment = .center
 
-        artistTitle.font = UIFont.systemFont(ofSize: artistTitleFontSize, weight: .regular)
-        artistTitle.textAlignment = .center
-
-        songTitle.text = "Title"
-        artistTitle.text = "Artist"
+        artistTitleLabel.font = UIFont.systemFont(ofSize: artistTitleFontSize, weight: .regular)
+        artistTitleLabel.textAlignment = .center
 
         artworkImageView.backgroundColor = .green
+        artworkImageView.contentMode = .scaleAspectFit
 
-        buttonImageView.backgroundColor = .gray
-        buttonImageView.layer.cornerRadius = buttonImageViewCornerRadius
+        playPauseButton.backgroundColor = .gray
+        playPauseButton.layer.cornerRadius = buttonImageViewCornerRadius
     }
 
     func setupConstraints() {
@@ -109,20 +152,30 @@ private extension RadioPlayerViewController {
             artworkImageView.widthAnchor.constraint(equalToConstant: artworkImageViewSize),
             artworkImageView.heightAnchor.constraint(equalToConstant: artworkImageViewSize),
 
-            songTitle.widthAnchor.constraint(equalToConstant: availableWidth),
-            artistTitle.widthAnchor.constraint(equalToConstant: availableWidth),
+            activityIndicator.centerXAnchor.constraint(equalTo: artworkImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: artworkImageView.centerYAnchor),
 
-            buttonImageView.widthAnchor.constraint(equalToConstant: buttonImageViewSize),
-            buttonImageView.heightAnchor.constraint(equalToConstant: buttonImageViewSize)
+            songTitleLabel.widthAnchor.constraint(equalToConstant: availableWidth),
+            artistTitleLabel.widthAnchor.constraint(equalToConstant: availableWidth),
+
+            playPauseButton.widthAnchor.constraint(equalToConstant: buttonImageViewSize),
+            playPauseButton.heightAnchor.constraint(equalToConstant: buttonImageViewSize),
+
+            buttonImageView.widthAnchor.constraint(equalToConstant: buttonImageViewSize / 2),
+            buttonImageView.heightAnchor.constraint(equalToConstant: buttonImageViewSize / 2),
+            buttonImageView.centerXAnchor.constraint(equalTo: playPauseButton.centerXAnchor),
+            buttonImageView.centerYAnchor.constraint(equalTo: playPauseButton.centerYAnchor)
         ])
 
         stackView.setCustomSpacing(spacing, after: artworkImageView)
-        stackView.setCustomSpacing(spacing, after: artistTitle)
+        stackView.setCustomSpacing(spacing, after: artistTitleLabel)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         artworkImageView.translatesAutoresizingMaskIntoConstraints = false
-        songTitle.translatesAutoresizingMaskIntoConstraints = false
-        artistTitle.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        songTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        artistTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        playPauseButton.translatesAutoresizingMaskIntoConstraints = false
         buttonImageView.translatesAutoresizingMaskIntoConstraints = false
     }
 }

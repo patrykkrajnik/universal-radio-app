@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E503247027D3C8B500C2B091 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */; };
 		E53D280227E371DA002F5C23 /* FRadioPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = E53D280127E371DA002F5C23 /* FRadioPlayer */; };
+		E55CF56627EF2DF400166B45 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CF56527EF2DF400166B45 /* String+Extension.swift */; };
+		E55CF56927EF391F00166B45 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E55CF56827EF391F00166B45 /* SDWebImage */; };
 		E5A5D79227E38EC200A7222A /* ItemContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A5D79127E38EC200A7222A /* ItemContentModel.swift */; };
 		E5D9FF4A27D52DD600FADD90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4927D52DD600FADD90 /* RxCocoa */; };
 		E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9FF4B27D52DD600FADD90 /* RxSwift */; };
@@ -32,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		E55CF56527EF2DF400166B45 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E5A5D79127E38EC200A7222A /* ItemContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemContentModel.swift; sourceTree = "<group>"; };
 		E5D9FF5527D534D100FADD90 /* RadioPlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerCoordinator.swift; sourceTree = "<group>"; };
 		E5D9FF5727D5353A00FADD90 /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			files = (
 				E5D9FF4C27D52DD600FADD90 /* RxSwift in Frameworks */,
 				E5D9FF4A27D52DD600FADD90 /* RxCocoa in Frameworks */,
+				E55CF56927EF391F00166B45 /* SDWebImage in Frameworks */,
 				E53D280227E371DA002F5C23 /* FRadioPlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				E503246F27D3C8B500C2B091 /* UIStackView+Extension.swift */,
+				E55CF56527EF2DF400166B45 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				E5D9FF4927D52DD600FADD90 /* RxCocoa */,
 				E5D9FF4B27D52DD600FADD90 /* RxSwift */,
 				E53D280127E371DA002F5C23 /* FRadioPlayer */,
+				E55CF56827EF391F00166B45 /* SDWebImage */,
 			);
 			productName = "Universal-App";
 			productReference = E5E02556278A2C9C000680F9 /* Universal-App.app */;
@@ -233,6 +239,7 @@
 			packageReferences = (
 				E5D9FF4827D52DD600FADD90 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E53D280027E371DA002F5C23 /* XCRemoteSwiftPackageReference "FRadioPlayer" */,
+				E55CF56727EF391F00166B45 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = E5E02557278A2C9C000680F9 /* Products */;
 			projectDirPath = "";
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55CF56627EF2DF400166B45 /* String+Extension.swift in Sources */,
 				E5D9FF5D27D5396000FADD90 /* AppCoordinator.swift in Sources */,
 				E5E0255A278A2C9C000680F9 /* AppDelegate.swift in Sources */,
 				E5D9FF5827D5353A00FADD90 /* RadioPlayerViewModel.swift in Sources */,
@@ -495,6 +503,14 @@
 				minimumVersion = 0.1.9;
 			};
 		};
+		E55CF56727EF391F00166B45 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		E5D9FF4827D52DD600FADD90 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -510,6 +526,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E53D280027E371DA002F5C23 /* XCRemoteSwiftPackageReference "FRadioPlayer" */;
 			productName = FRadioPlayer;
+		};
+		E55CF56827EF391F00166B45 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E55CF56727EF391F00166B45 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 		E5D9FF4927D52DD600FADD90 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
